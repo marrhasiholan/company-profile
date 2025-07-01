@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { blogs } from "../data/blogs";
 
 interface BlogPost {
-  id: number;
+  id: string;
   title: string;
   excerpt: string;
   author: string;
@@ -13,38 +14,6 @@ interface BlogPost {
 }
 
 export default function BlogListPage() {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-
-  useEffect(() => {
-    // Simulasi fetch data blog
-    setPosts([
-      {
-        id: 1,
-        title: "Why UX Matters in Modern Web Design",
-        excerpt:
-          "Discover how thoughtful design can boost conversions and user loyalty.",
-        author: "Jane Doe",
-        date: "2024-06-01",
-      },
-      {
-        id: 2,
-        title: "Top 5 Frontend Frameworks in 2025",
-        excerpt:
-          "Explore the most powerful and popular tools for building user interfaces.",
-        author: "John Smith",
-        date: "2024-06-15",
-      },
-      {
-        id: 3,
-        title: "The Rise of Headless CMS: What You Need to Know",
-        excerpt:
-          "Learn the benefits of using headless architecture for content management.",
-        author: "Maria Gonzalez",
-        date: "2024-07-01",
-      },
-    ]);
-  }, []);
-
   return (
     <main className="max-w-6xl mx-auto px-6 py-20 space-y-12">
       <div className="text-center space-y-2">
@@ -56,7 +25,7 @@ export default function BlogListPage() {
       </div>
 
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post, i) => (
+        {blogs.map((post, i) => (
           <motion.div
             key={post.id}
             className="p-6 border rounded-xl shadow-sm hover:shadow-lg transition"
