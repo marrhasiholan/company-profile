@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+body {
+  scroll-behavior: smooth;
+}
+
+.glassmorphism {
+  @apply bg-white/30 backdrop-blur-lg border border-white/20;
+}
