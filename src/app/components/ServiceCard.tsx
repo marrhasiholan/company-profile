@@ -35,7 +35,7 @@ export default function ServiceCard({
         alt={title}
         width={500}
         height={300}
-        className="rounded-lg object-cover w-full h-40"
+        className="rounded-lg object-cover w-full h-auto"
       />
       <h3 className="text-xl font-semibold text-pink-600">{title}</h3>
       <p className="text-gray-700 text-sm">{description}</p>
